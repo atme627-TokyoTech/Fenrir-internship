@@ -9,5 +9,5 @@ test('test2', () => {
 });
 
 test('test3', () => {
-    expect(isValid('{)}')).toBe(false);
+    expect(isValid('({)}')).toBe(false);
 });
