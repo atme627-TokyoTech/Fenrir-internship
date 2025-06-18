@@ -102,6 +102,9 @@ export const isValid: (s: string) => boolean = (s) => {
     return bStack.isEmpty();
 };
 
-
-let s: string = '()';
-console.log(isValid(s)); // true
+// コマンドラインから直接実行されたときの処理
+if (require.main === module) {
+  const input = process.argv[2];
+  const result = isValid(input);
+  console.log(result);
+}
