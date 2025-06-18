@@ -4,7 +4,7 @@ class bracketStack {
     #stack: string[] = [];
 
     push(b: string) {
-        this.#stack.push(s);
+        this.#stack.push(b);
     }
 
     /**     
@@ -29,6 +29,14 @@ class bracketStack {
             return undefined;
         }
         return this.#stack[this.#stack.length - 1];
+    }
+
+    /**
+     * デバッグ用
+     * stackの中身を出力
+     */
+    print() {
+        console.log(this.#stack);
     }
 }
 
@@ -73,9 +81,13 @@ const isStartBracket: (b: string | undefined) => boolean = (b) => {
 const isValid: (s: string) => boolean = (s) => {
     let bStack: bracketStack = new bracketStack();
     for(let i = 0; i < s.length; i++){
+        console.log("----------------");
+        bStack.print();
         //開き括弧 -> stackにpush
         if(isStartBracket(s[i])){
             bStack.push(s[i]);
+            console.log("push");
+            bStack.print();
             continue;
         }
         
@@ -84,6 +96,8 @@ const isValid: (s: string) => boolean = (s) => {
         //閉じられるなら、対応する開き括弧をstackから消す
         if(areBracketsMatched(bStack.lastBracket(), s[i])) {
             bStack.pop();
+            console.log("pop");
+            bStack.print();
         }
         else {
             return false;
@@ -95,5 +109,5 @@ const isValid: (s: string) => boolean = (s) => {
 };
 
 
-let s: string = '()';
+let s: string = '({)}';
 console.log(isValid(s)); // true

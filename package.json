@@ -1,0 +1,26 @@
+{
+  "name": "fenrir-internship",
+  "version": "1.0.0",
+  "description": "## インターンシップ プログラム課題",
+  "main": "main.js",
+  "scripts": {
+    "tsx": "npx tsx src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atme627-TokyoTech/Fenrir-internship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atme627-TokyoTech/Fenrir-internship/issues"
+  },
+  "homepage": "https://github.com/atme627-TokyoTech/Fenrir-internship#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.4.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
